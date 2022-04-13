@@ -1,0 +1,3 @@
+{
+    "app": "mpx ts-node infrastructure/Launcher.ts"
+}
