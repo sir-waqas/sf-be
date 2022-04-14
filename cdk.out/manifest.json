@@ -1,0 +1,157 @@
+{
+  "version": "17.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "Space-Finder.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "Space-Finder.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "Space-Finder": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "Space-Finder.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/72af00b25919ef199d631761c71ab6e80ef29df38275f133589551b613772e04.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "Space-Finder.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "SpaceFinderApp"
+      },
+      "dependencies": [
+        "Space-Finder.assets"
+      ],
+      "metadata": {
+        "/Space-Finder/SpaceApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceApi1B373D2B"
+          }
+        ],
+        "/Space-Finder/SpaceApi/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceApiCloudWatchRole2811DDE0"
+          }
+        ],
+        "/Space-Finder/SpaceApi/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceApiAccount1ADAEF20"
+          }
+        ],
+        "/Space-Finder/SpaceApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceApiDeploymentA2B9E76565b0b8e70e2a287a8d8fd59bec9ca3a5"
+          }
+        ],
+        "/Space-Finder/SpaceApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceApiDeploymentStageprodBB8A31FE"
+          }
+        ],
+        "/Space-Finder/SpaceApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceApiEndpointDA7E4050"
+          }
+        ],
+        "/Space-Finder/SpaceApi/Default/bismillah/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceApibismillah938E142F"
+          }
+        ],
+        "/Space-Finder/SpaceApi/Default/bismillah/GET/ApiPermission.SpaceFinderSpaceApi1F575F27.GET..bismillah": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceApibismillahGETApiPermissionSpaceFinderSpaceApi1F575F27GETbismillah9060442B"
+          }
+        ],
+        "/Space-Finder/SpaceApi/Default/bismillah/GET/ApiPermission.Test.SpaceFinderSpaceApi1F575F27.GET..bismillah": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceApibismillahGETApiPermissionTestSpaceFinderSpaceApi1F575F27GETbismillahD0B32030"
+          }
+        ],
+        "/Space-Finder/SpaceApi/Default/bismillah/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceApibismillahGET1BEF829D"
+          }
+        ],
+        "/Space-Finder/SpacesTable": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "SpacesTable8A997355"
+            }
+          }
+        ],
+        "/Space-Finder/SpacesTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpacesTable8A997355"
+          }
+        ],
+        "/Space-Finder/BismillahLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BismillahLambdaServiceRole0E90E245"
+          }
+        ],
+        "/Space-Finder/BismillahLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BismillahLambdaCB1FCB2F"
+          }
+        ],
+        "/Space-Finder/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/Space-Finder/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/Space-Finder/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/Space-Finder/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "Space-Finder"
+    }
+  }
+}
